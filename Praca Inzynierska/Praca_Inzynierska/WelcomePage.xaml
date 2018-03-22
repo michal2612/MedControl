@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.WelcomePage"
+             Title="Aplikacja"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImage="Images/background.jpg">
+    <StackLayout>
+        <Label HorizontalTextAlignment="Center"
+               Margin="20,160,20,0"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               Text="Aplikacja Mobilna wspomagająca utrzymanie prawidłowego trybu życia"
+               FontSize="35"
+               FontAttributes="Bold"
+               TextColor="Gray"/>
+        <Button x:Name="next" VerticalOptions="EndAndExpand" Text="Zacznij!" Clicked="Button_Clicked" TextColor="Black"/>
+    </StackLayout>
+</ContentPage>

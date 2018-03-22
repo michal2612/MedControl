@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.AddDate"
+             Title="Dodaj nowe wydarzenie">
+    <StackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Dodaj nową datę">
+                    <EntryCell Placeholder="Nazwa wydarzenia" x:Name="EventName"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center" Text="Wybierz datę"/>
+                            <DatePicker HorizontalOptions="EndAndExpand" x:Name="EventDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center" Text="Kolor zaznaczenia"/>
+                            <Picker HorizontalOptions="EndAndExpand" x:Name="EventColor" Title="Wybierz kolor"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Button HorizontalOptions="EndAndExpand" Text="Dodaj" Clicked="Button_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

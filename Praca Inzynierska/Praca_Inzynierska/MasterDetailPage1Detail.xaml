@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.MasterDetailPage1Detail"
+             Title="MedControl"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Color">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Informacje" Icon="info.png" Order="Primary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="stack">
+                <Label Text="Pomiar glukozy" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="{StaticResource Color}"/>
+                <forms:ChartView x:Name="myChart" HeightRequest="150" />
+                <Label Text="Przebiegnięty dystans" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="{StaticResource Color}"/>
+                <forms:ChartView x:Name="myChart2" HeightRequest="150"/>
+                <Label Text="Spożyte kalorie" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="{StaticResource Color}"/>
+                <forms:ChartView x:Name="myChart3" HeightRequest="150"/>
+                <Label Text="BMI" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="{StaticResource Color}"/>
+                <forms:ChartView x:Name="myChart5" HeightRequest="150"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

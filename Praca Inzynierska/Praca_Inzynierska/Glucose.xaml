@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Glucose">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="info.png" Order="Primary" Text="info" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Oblicz Poziom glukozy">
+                    <EntryCell Placeholder="Podaj wartość glukozy [mg/dl]" Keyboard="Numeric" x:Name="number"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0,0,0">
+                            <Button Text="Zapisz" HorizontalOptions="Center" Clicked="Button_Clicked_1" x:Name="SaveRecord"/>
+                            <!--<Button Text="Delete" Clicked="Button_Clicked_2" /> -->
+                            <Button Text="Oblicz" HorizontalOptions="EndAndExpand" Clicked="Button_Clicked" x:Name="value"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <ListView x:Name="list" ItemSelected="list_ItemSelected" ItemTapped="list_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Value, StringFormat='Wartość: {0} [mg/dl]'}" Detail="{Binding Date}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Usuń" IsDestructive="True" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

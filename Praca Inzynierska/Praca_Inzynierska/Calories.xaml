@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Calories"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_settings_white_24dp.png" Text="Ustawienia" Order="Secondary" />
+        <ToolbarItem Icon="info.png" Text="Informacje" Order="Secondary" />
+        <ToolbarItem Icon="plus.png" Text="Dodaj" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="list" HasUnevenRows="True" ItemSelected="list_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Usuń" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        <StackLayout Orientation="Horizontal" Padding="5" x:Name="StackCell" BackgroundColor="{Binding Color}">
+                            <StackLayout Padding="0,0,0,5" HorizontalOptions="StartAndExpand">
+                                <Label BackgroundColor="{Binding Color}" Text="{Binding DailyCalory, StringFormat='Spożyte kalorie {0}'}"/>
+                                <Label Text="{Binding Today, StringFormat='Data: {0}'}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

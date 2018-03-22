@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Rehab"
+             Title="Rehabilitacja">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png" Text="Dodaj" Activated="Move_AddRehab" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="lista" ItemSelected="lista_ItemSelected" ItemTapped="lista_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Name}" ImageSource="{Binding ImagePath}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Edycja" CommandParameter="{Binding .}" Clicked="MenuItem_Clicked"/>
+                            <MenuItem Text="Usuń" IsDestructive="True" CommandParameter="{Binding .}" Clicked="MenuItem_Clicked_1"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

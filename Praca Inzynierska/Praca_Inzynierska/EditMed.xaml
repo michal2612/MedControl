@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.EditMed"
+             Title="{Binding Name, StringFormat='Edytujesz {0}'}">
+    <StackLayout>
+        <TableView BackgroundColor="AliceBlue">
+            <TableRoot>
+                <TableSection Title="Edytuj lek">
+                    <EntryCell Placeholder="Podaj nazwę leku" Text="{Binding Name}" x:Name="title"></EntryCell>
+                    <EntryCell Placeholder="Dawkowanie/dzień" Text="{Binding Dosage}" Keyboard="Numeric" x:Name="dosage"></EntryCell>
+                </TableSection>
+                <TableSection Title="Harmonogram">
+                    <SwitchCell Text="Wł / Wył Przypomnienie" x:Name="notifier"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Od:</Label>
+                            <DatePicker x:Name="today_data" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Do:</Label>
+                            <DatePicker x:Name="last_data"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Przypomnienie o:</Label>
+                            <TimePicker Time="12:00"  HorizontalOptions="EndAndExpand" x:Name="notify"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Button Text="+" x:Name="AddNotify" />
+                            <Button Text="Zapisz" x:Name="Add" HorizontalOptions="EndAndExpand" Clicked="Saved"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.AddRehab"
+             Title="Nowe ćwiczenie">
+    <StackLayout>
+        <TableView BackgroundColor="AliceBlue">
+            <TableRoot>
+                <TableSection Title="Dodaj nowe ćwiczenie">
+                    <EntryCell Placeholder="Podaj nazwę ćwiczenia" x:Name="title"></EntryCell>
+                    <EntryCell Placeholder="Powtórzeń/Seria" Keyboard="Numeric" x:Name="excercise"></EntryCell>
+                    <EntryCell Placeholder="Serii/dzień" Keyboard="Numeric" x:Name="excercise_1"></EntryCell>
+                </TableSection>
+                <TableSection Title="Harmonogram">
+                    <SwitchCell Text="Wł / Wył Przypomnienie" x:Name="notifier"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Od:</Label>
+                            <DatePicker x:Name="today_data"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Do:</Label>
+                            <DatePicker x:Name="last_data"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label VerticalOptions="Center">Przypomnienie o:</Label>
+                            <TimePicker Time="12:00"  HorizontalOptions="EndAndExpand" x:Name="notify"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Button Text="+" x:Name="AddNotify" />
+                            <Button Text="Dodaj!" x:Name="Add" HorizontalOptions="EndAndExpand" Clicked="Add_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

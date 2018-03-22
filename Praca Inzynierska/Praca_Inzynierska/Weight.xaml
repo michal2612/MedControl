@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Weight">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="info.png" Text="information" Order="Primary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Oblicz BMI">
+                    <EntryCell Placeholder="Twoja waga [kg]" Keyboard="Numeric" x:Name="waga"/>
+                    <EntryCell Placeholder="Twój wzrost [cm]" Keyboard="Numeric" x:Name="wzrost"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0,0,0">
+                            <Button Text="Zapisz" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+                            <Button Text="Oblicz" HorizontalOptions="EndAndExpand" Clicked="oblicz_Clicked" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <ListView x:Name="list"  Margin="0,0,0,0" ItemSelected="list_ItemSelected" ItemTapped="list_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Bmi, StringFormat='Wartość BMI: {0:F2}'}" Detail="{Binding Date}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Usuń" IsDestructive="True" CommandParameter="{Binding .}" Clicked="MenuItem_Clicked"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

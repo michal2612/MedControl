@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Visit"
+             Title="Wizyty"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png" Text="Dodaj" Clicked="ToolbarItem_Clicked_1" />
+        <ToolbarItem Icon="info.png" Text="Informacje" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <controls:Calendar Padding="10,0,10,0" StartDay="Monday" SelectedBorderWidth="4" DisabledBorderColor="Black" x:Name="Kalendarz" DateClicked="Kalendarz_DateClicked"/>
+    </StackLayout>
+</ContentPage>

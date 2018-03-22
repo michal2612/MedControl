@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.AddNote"
+             Title="Dodaj notatkę">
+    <StackLayout>
+        <Editor VerticalOptions="FillAndExpand"
+                WidthRequest="18"
+                x:Name="editor"
+                TextChanged="editor_TextChanged"
+                Completed="editor_Completed" />
+        <StackLayout HeightRequest="15" />
+        <StackLayout>
+            <Button Text="Dodaj" HorizontalOptions="EndAndExpand" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

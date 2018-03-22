@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.NowyPrzyklad"
+             Title="Witaj"
+             NavigationPage.HasNavigationBar="True">
+    <StackLayout>
+        <Label Text="Witaj!" />
+        <Button Text="Takst" Clicked="Button_Clicked"/>
+        <Entry Placeholder="White" PlaceholderColor="Red" BackgroundColor="Azure"/>
+        <ProgressBar />
+        <Switch />
+        <StackLayout HorizontalOptions="Center">
+            <Label FontSize="Medium" Text="WITAJ!" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

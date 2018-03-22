@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Running">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Icon="info.png" Order="Primary" Clicked="ToolbarItem_Clicked_1"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="list" HasUnevenRows="True" ItemSelected="list_ItemSelected" ItemTapped="list_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Usuń" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <StackLayout Padding="13,0" HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Distance, StringFormat='Pokonane {0} km'}" />
+                                <Label Text="{Binding TodayData}" />
+                            </StackLayout>
+                            <Label Text="{Binding Time, Mode=TwoWay, StringFormat='Czas biegu: \{0:h\\:mm\}'}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

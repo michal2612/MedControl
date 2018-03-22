@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.AddRun"
+             Title="Dodaj nowy dystans">
+    <StackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Informacje">
+                    <EntryCell Placeholder="Przebiegnięty dystans [km]" Keyboard="Numeric" x:Name="DistanceEntry" />
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Od:" VerticalOptions="Center"/>
+                            <TimePicker x:Name="FirstTime" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Do:" VerticalOptions="Center"/>
+                            <TimePicker x:Name="SecondTime" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Padding="13,0" Orientation="Horizontal">
+                            <Button Text="Dodaj" Clicked="Button_Clicked" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

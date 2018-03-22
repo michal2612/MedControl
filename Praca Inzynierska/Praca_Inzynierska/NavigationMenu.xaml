@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.NavigationMenu"
+             Title="Nawigacja">
+    <StackLayout>
+        <Button Text="Leki" Clicked="move_Med" TextColor="Black"/>
+        <Button Text="Pomiary pacjenta" Clicked="move_Measurment" TextColor="Black"/>
+        <Button Text="Notatki" Clicked="move_Notes" TextColor="Black"/>
+        <Button Text="Wizyty" Clicked="move_Visit" TextColor="Black"/>
+        <Button Text="Aktywność fizyczna" Clicked="move_Rehab" TextColor="Black"/>
+        <!--<ListView x:Name="Lista" SeparatorVisibility="None"/> -->
+    </StackLayout>
+</ContentPage>

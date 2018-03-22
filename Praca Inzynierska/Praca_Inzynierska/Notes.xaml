@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Praca_Inzynierska.Notes"
+             Title="Notatki">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Dodaj nową notatkę" Icon="plus.png" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="list" ItemSelected="list_ItemSelected" HasUnevenRows="True" ItemTapped="list_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding TextNote}" Detail="{Binding Data, StringFormat='Dodano dnia {0}'}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Usuń" CommandParameter="{Binding .}" Clicked="MenuItem_Clicked"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
