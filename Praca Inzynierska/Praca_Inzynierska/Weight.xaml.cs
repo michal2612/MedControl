@@ -132,7 +132,7 @@ namespace Praca_Inzynierska
             var dates = (sender as MenuItem).CommandParameter as BMI;
             //var rekord = string.Format("Czy na pewno chcesz usunąć rekord {0}?", recipe.Name);
             //var answer = DisplayAlert("Question?", rekord, "Tak", "Nie");
-            _conntection.DeleteAsync(dates); //?
+            _conntection.DeleteAsync(dates);
             _dates.Remove(dates);
         }
     }
