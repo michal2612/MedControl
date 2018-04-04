@@ -17,6 +17,7 @@ namespace Praca_Inzynierska
         private SQLiteAsyncConnection _conntection;
         private ObservableCollection<Food> _food;
         public int target = 5000;
+
         public AddFood()
         {
             InitializeComponent();

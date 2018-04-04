@@ -11,15 +11,8 @@ using Xamarin.Forms.Xaml;
 
 namespace Praca_Inzynierska
 {
-    public class Notatki
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string TextNote { get; set; }
-        public string Data { get; set; }
-    }
 
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Notes : ContentPage
 	{
         private ObservableCollection<Notatki> notatki;

@@ -1,6 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
@@ -17,22 +16,6 @@ namespace Praca_Inzynierska
         public int Id { get; set; }
         public string FoodName { get; set; }
         public int CalorieValue { get; set; }
-    }
-    public class Calorie 
-    {
-        public Calorie()
-        {
-            var CalorieList = new List<Food>();
-        }
-
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public int Target { get; set; }
-        public int DailyCalory { get; set; }
-        public string Today { get; set; }
-        public string Color = "Red";
-        public List<Food> FoodList;
-
     }
 
 	[XamlCompilation(XamlCompilationOptions.Compile)]

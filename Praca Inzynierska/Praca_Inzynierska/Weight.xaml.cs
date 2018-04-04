@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,33 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Praca_Inzynierska
 {
-    public class BMI : INotifyPropertyChanged
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
-        public float _Bmi;
-        public float Bmi
-        {
-            get { return _Bmi; }
-            set
-            {
-                if (_Bmi == value)
-                    return;
-
-                _Bmi = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Date { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); //jeśli PropertyChanged = null nic nierób, jeżeli inna wartość funkcja invoke
-        }
-    }
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Weight : ContentPage
 	{
         private SQLiteAsyncConnection _conntection;

@@ -56,16 +56,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Calories.xaml.cs">
-      <DependentUpon>Calories.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\CalendaryDates.cs" />
+    <Compile Include="Glukoza.cs" />
+    <Compile Include="Models\Calorie.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\BMI.cs" />
     <Compile Include="Database\ISQLiteDb.cs" />
     <Compile Include="EditMed.xaml.cs">
       <DependentUpon>EditMed.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Glucose.xaml.cs">
-      <DependentUpon>Glucose.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\IBMIclass.cs" />
     <Compile Include="MasterDetailPage1.xaml.cs">
       <DependentUpon>MasterDetailPage1.xaml</DependentUpon>
     </Compile>
@@ -85,6 +85,7 @@
     <Compile Include="NavigationMenu.xaml.cs">
       <DependentUpon>NavigationMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Notatki.cs" />
     <Compile Include="Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
@@ -92,12 +93,15 @@
       <DependentUpon>NowyPrzyklad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Recipe.cs" />
     <Compile Include="Rehab.xaml.cs">
       <DependentUpon>Rehab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Rehabilitation.cs" />
     <Compile Include="Running.xaml.cs">
       <DependentUpon>Running.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\RunningClass.cs" />
     <Compile Include="Visit.xaml.cs">
       <DependentUpon>Visit.xaml</DependentUpon>
     </Compile>
@@ -248,9 +252,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\BACK.png" />
     <EmbeddedResource Include="Images\heh.jpg" />
